@@ -27,11 +27,11 @@ if __name__ == '__main__':
         lg.warning(e)
     else:
         try:
-			if args.extension == 'xml':
-				x_an.launch_analysis(datafile)
-			elif args.extension == 'csv':
-				c_an.launch_analysis(datafile)
-		except FileNotFoundError as e:
-			print("Ow :( The file was not found. Here is the original message of the exception :", e)
+		if args.extension == 'xml':
+			x_an.launch_analysis(datafile)
+		elif args.extension == 'csv':
+			c_an.launch_analysis(datafile)
+	except FileNotFoundError as e:
+		print("Ow :( The file was not found. Here is the original message of the exception :", e)
     finally:
         lg.info('#################### Analysis is over ######################')
